@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #d6f8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.button {
+    padding: 1em 2em;
+    background-color: #d0e2fa;
+    color: #1b457b;
+    border: 1px solid currentColor;
+    margin-top: 32px;
+}
+
+.box {
+    width: 200px;
+    aspect-ratio: 1;
+    background-color: #fa74f3;
+    border: 1px solid #000;
+    
+    transition-duration: 1s;
+    transition-behavior: allow-discrete;
+    display: none;
+    opacity: 0;
+}
+
+.is-visible {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
+}

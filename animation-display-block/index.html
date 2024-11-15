@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button class="button">Open box</button>
+        <div class="box"></div>
+
+        
+        <script>
+        const buttonEl = document.querySelector('.button');
+        const boxEl = document.querySelector('.box');
+
+        buttonEl.addEventListener('click', () => {
+            boxEl.classList.toggle('is-visible');
+
+            if (boxEl.classList.contains('is-visible')) {
+                buttonEl.textContent = 'Close box';
+            } else buttonEl.textContent = 'Open box';
+        });
+        </script>
+    </body>
+</html>
