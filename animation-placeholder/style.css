@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    position: relative;
+    font-size: 24px;
+}
+
+.login__input {
+    font-size: 1em;
+}
+
+.login__label {
+    position: absolute;
+    top: 0.25em;
+    left: 4px;
+    font-size: 0.85em;
+    color: darkgrey;
+    transition-duration: 0.3s;
+}
+
+.login__input:focus + .login__label {
+    color: black;
+    scale: 0.7;
+    translate: -0.5em -1.25em;
+}
