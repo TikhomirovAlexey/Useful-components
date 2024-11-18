@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meter bar</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form class="form" action="#">
+            <meter class="meter" min="1" low="2" high="3" optimum="4"  max="5" value="0"></meter>
+            <h3 class="heading">Lorem, ipsum dolor.</h3>
+            <label class="label">
+                <input class="checkbox" type="checkbox">Checkbox-1
+            </label>
+            <label class="label">
+                <input class="checkbox" type="checkbox">Checkbox-2
+            </label>
+            <label class="label">
+                <input class="checkbox" type="checkbox">Checkbox-3
+            </label>
+            <label class="label">
+                <input class="checkbox" type="checkbox">Checkbox-4
+            </label>
+            <label class="label">
+                <input class="checkbox" type="checkbox">Checkbox-5
+            </label>
+        </form>
+
+        <script>
+            const formEl = document.querySelector('.form');
+            const meterEl = document.querySelector('.meter');
+            const allCheckbox = document.querySelectorAll('.checkbox');
+
+            formEl.addEventListener('input', () => {
+                let tmpValue = 0;
+                for (let i = 0; i < allCheckbox.length; i++) {
+                    if (allCheckbox[i].checked) {
+                        tmpValue++;
+                    }
+                }
+                meterEl.value = tmpValue;
+            });
+        </script>
+    </body>
+</html>
