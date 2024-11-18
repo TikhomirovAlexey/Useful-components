@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Progress bar</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <p class="text">Loading
+                <span class="load-value">0</span>
+                %
+            </p>
+            <progress
+                class="progress"
+                min="0"
+                max="100"
+                value="0"
+            ></progress>
+        </div>
+
+        <script>
+            const displayValue = document.querySelector('.load-value');
+            const progressEl = document.querySelector('.progress');
+
+            setInterval(() => {
+                progressEl.value =  progressEl.value + 1;
+                displayValue.textContent = progressEl.value;
+            }, 200);
+        </script>
+    </body>
+</html>
