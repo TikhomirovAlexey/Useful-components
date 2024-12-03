@@ -1,0 +1,58 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --button-width: 50px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle {
+    appearance: none;
+
+    position: relative;
+
+    width: 120px;
+    height: 50px;
+    background-color: #f3f2f2;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    transition: all 0.5s;
+}
+
+.toggle::before {
+    content: '';
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--button-width);
+    height: 49px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.toggle:checked {
+    background-color: #c7e5f8;
+    border-color: #2faafc;
+}
+
+.toggle:checked::before {
+    left: calc(100% - var(--button-width));
+
+    background-color: #2faafc;
+    border-color: #2faafc;
+}
